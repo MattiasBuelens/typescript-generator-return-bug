@@ -1,5 +1,7 @@
 import assert = require('assert');
 import basic from "./basic";
+import closure from "./closure";
+import yieldStar from "./yield-star";
 
 function test(fn: (log: string[]) => IterableIterator<number>): number {
     try {
@@ -24,4 +26,6 @@ function test(fn: (log: string[]) => IterableIterator<number>): number {
 
 let errors = 0;
 errors += test(basic);
+errors += test(closure);
+errors += test(yieldStar);
 process.exit(errors);
