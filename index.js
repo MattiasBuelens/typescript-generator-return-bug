@@ -2,7 +2,7 @@ const assert = require('assert');
 const js = require('./js/index');
 const ts = require('./ts/index');
 
-function test(fn) {
+function test(name, fn) {
     try {
         const log = [];
         const gen = fn(log);
@@ -15,19 +15,23 @@ function test(fn) {
         assert.deepStrictEqual(gen.return(), {done: true, value: undefined});
         assert.deepStrictEqual(log, ['yield', 'yield', 'yield', 'finally']);
 
-        console.log(`Test "${fn.name}" passed`);
+        console.log(`Test ${name} passed`);
         return 0;
     } catch (e) {
-        console.error(`Test "${fn.name}" failed\n`, e);
+        console.error(`Test ${name} failed\n`, e);
         return 1;
     }
 }
 
+function suite(suiteName, fnMap) {
+    let errors = 0;
+    for (let testName of Object.keys(fnMap)) {
+        errors += test(`${suiteName}:${testName}`, fnMap[testName]);
+    }
+    return errors;
+}
+
 let errors = 0;
-errors += test(js.basic);
-errors += test(js.closure);
-errors += test(js.yieldStar);
-errors += test(ts.basic);
-errors += test(ts.closure);
-errors += test(ts.yieldStar);
+errors += suite('native', js);
+errors += suite('typescript', ts);
 process.exit(errors);
