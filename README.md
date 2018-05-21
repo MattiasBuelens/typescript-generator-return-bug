@@ -1,0 +1,1 @@
+# typescript-generator-return-bug
