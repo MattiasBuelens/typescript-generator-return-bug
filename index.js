@@ -1,5 +1,6 @@
 const assert = require('assert');
 const js = require('./js/index');
+const babel = require('./babel/index');
 const ts = require('./ts/index');
 
 function test(name, fn) {
@@ -33,5 +34,6 @@ function suite(suiteName, fnMap) {
 
 let errors = 0;
 errors += suite('native', js);
+errors += suite('babel', babel);
 errors += suite('typescript', ts);
 process.exit(errors);

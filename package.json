@@ -4,14 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "tsc -p ./ts",
-    "test": "node ./index.js"
+    "build:ts": "tsc -p ./ts",
+    "build:babel": "babel js -d babel",
+    "pretest": "npm run build:ts && npm run build:babel",
+    "test": "node -r babel-polyfill ./index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  },
   "devDependencies": {
     "@types/node": "^10.1.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "typescript": "^2.8.3"
   }
 }
