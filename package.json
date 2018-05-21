@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:ts": "tsc -p .",
+    "build:ts": "tsc -p . && tsc -p ./tsconfig-es2015.json",
     "build:babel": "babel js -d babel",
     "pretest": "npm run build:ts && npm run build:babel",
     "test": "node -r babel-polyfill ./index.js"

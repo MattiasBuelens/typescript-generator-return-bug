@@ -1,7 +1,8 @@
 const assert = require('assert');
 const js = require('./js/index');
 const babel = require('./babel/index');
-const ts = require('./ts-es5/index');
+const tsEs2015 = require('./ts-es2015/index');
+const tsEs5 = require('./ts-es5/index');
 
 function test(name, fn) {
     try {
@@ -35,5 +36,6 @@ function suite(suiteName, fnMap) {
 let errors = 0;
 errors += suite('native', js);
 errors += suite('babel', babel);
-errors += suite('typescript', ts);
+errors += suite('typescript-es2015', tsEs2015);
+errors += suite('typescript-es5', tsEs5);
 process.exit(errors);
