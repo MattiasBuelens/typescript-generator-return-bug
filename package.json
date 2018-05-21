@@ -1,7 +1,8 @@
 {
   "name": "typescript-generator-return-bug",
   "version": "1.0.0",
-  "description": "",
+  "description": "Reproduction case for https://github.com/Microsoft/TypeScript/issues/24288",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "build:ts": "tsc -p . && tsc -p ./tsconfig-es2015.json",
@@ -10,8 +11,8 @@
     "test": "node ./index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Mattias Buelens <mattias@buelens.com>",
+  "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.26.0"
   },
