@@ -1,4 +1,4 @@
-export default function* basic(log: string[]) {
+export function* basic(log: string[]) {
     try {
         let sum = 0;
         while (true) {

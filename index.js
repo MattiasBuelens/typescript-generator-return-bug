@@ -1,11 +1,11 @@
-import assert = require('assert');
-import basic from "./basic";
-import closure from "./closure";
-import yieldStar from "./yield-star";
+const assert = require('assert');
+const {basic} = require('./typescript/basic');
+const {closure} = require('./typescript/closure');
+const {yieldStar} = require('./typescript/yield-star');
 
-function test(fn: (log: string[]) => IterableIterator<number>): number {
+function test(fn) {
     try {
-        const log: string[] = [];
+        const log = [];
         const gen = fn(log);
         assert.deepStrictEqual(gen.next(), {done: false, value: 0});
         assert.deepStrictEqual(log, ['yield']);
@@ -13,7 +13,7 @@ function test(fn: (log: string[]) => IterableIterator<number>): number {
         assert.deepStrictEqual(log, ['yield', 'yield']);
         assert.deepStrictEqual(gen.next(20), {done: false, value: 30});
         assert.deepStrictEqual(log, ['yield', 'yield', 'yield']);
-        assert.deepStrictEqual(gen.return!(), {done: true, value: undefined});
+        assert.deepStrictEqual(gen.return(), {done: true, value: undefined});
         assert.deepStrictEqual(log, ['yield', 'yield', 'yield', 'finally']);
 
         console.log(`Test "${fn.name}" passed`);

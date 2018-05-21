@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:typescript": "cd ./typescript && ts-node ./index.ts"
+    "pretest": "tsc -p ./typescript",
+    "test": "node ./index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^10.1.2",
-    "ts-node": "^6.0.3",
     "typescript": "^2.8.3"
   }
 }

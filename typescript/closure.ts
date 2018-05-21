@@ -1,4 +1,4 @@
-export default function* closure(log: string[]) {
+export function* closure(log: string[]) {
     try {
         let sum = 0;
         while (true) {

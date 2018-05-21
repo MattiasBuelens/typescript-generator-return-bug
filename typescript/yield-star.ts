@@ -2,7 +2,7 @@ function* yielder(value: number) {
     return (yield value);
 }
 
-export default function* yieldStar(log: string[]) {
+export function* yieldStar(log: string[]) {
     try {
         let sum = 0;
         while (true) {
