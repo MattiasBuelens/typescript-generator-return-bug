@@ -9,7 +9,7 @@
     "strict": true,
     "esModuleInterop": true,
     "rootDir": "ts",
-    "outDir": "ts-es5"
+    "outDir": "out/ts-es5"
   },
   "include": [
     "ts/**/*"

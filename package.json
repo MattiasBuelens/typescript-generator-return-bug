@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:ts": "tsc -p . && tsc -p ./tsconfig-es2015.json",
-    "build:babel": "babel js -d babel",
+    "build:babel": "babel js -d out/babel",
     "pretest": "npm run build:ts && npm run build:babel",
     "test": "node -r babel-polyfill ./index.js"
   },
