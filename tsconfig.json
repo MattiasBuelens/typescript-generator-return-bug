@@ -7,6 +7,11 @@
     ],
     "downlevelIteration": true,
     "strict": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "rootDir": "ts",
+    "outDir": "ts-es5"
+  },
+  "include": [
+    "ts/**/*"
+  ]
 }

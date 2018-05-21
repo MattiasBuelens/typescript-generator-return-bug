@@ -1,7 +1,7 @@
 const assert = require('assert');
 const js = require('./js/index');
 const babel = require('./babel/index');
-const ts = require('./ts/index');
+const ts = require('./ts-es5/index');
 
 function test(name, fn) {
     try {
