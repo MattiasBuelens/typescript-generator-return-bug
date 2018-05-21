@@ -1,3 +1,5 @@
+require('babel-polyfill');
+
 const assert = require('assert');
 const js = require('./js/index');
 const babel = require('./out/babel/index');
