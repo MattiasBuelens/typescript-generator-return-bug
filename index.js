@@ -1,4 +1,5 @@
 const assert = require('assert');
+const js = require('./js/index');
 const ts = require('./ts/index');
 
 function test(fn) {
@@ -23,6 +24,9 @@ function test(fn) {
 }
 
 let errors = 0;
+errors += test(js.basic);
+errors += test(js.closure);
+errors += test(js.yieldStar);
 errors += test(ts.basic);
 errors += test(ts.closure);
 errors += test(ts.yieldStar);
