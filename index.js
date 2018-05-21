@@ -1,7 +1,5 @@
 const assert = require('assert');
-const {basic} = require('./typescript/basic');
-const {closure} = require('./typescript/closure');
-const {yieldStar} = require('./typescript/yield-star');
+const ts = require('./typescript/index');
 
 function test(fn) {
     try {
@@ -25,7 +23,7 @@ function test(fn) {
 }
 
 let errors = 0;
-errors += test(basic);
-errors += test(closure);
-errors += test(yieldStar);
+errors += test(ts.basic);
+errors += test(ts.closure);
+errors += test(ts.yieldStar);
 process.exit(errors);
