@@ -1,5 +1,5 @@
 const assert = require('assert');
-const ts = require('./typescript/index');
+const ts = require('./ts/index');
 
 function test(fn) {
     try {

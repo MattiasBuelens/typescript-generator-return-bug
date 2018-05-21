@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "tsc -p ./typescript",
+    "pretest": "tsc -p ./ts",
     "test": "node ./index.js"
   },
   "keywords": [],
